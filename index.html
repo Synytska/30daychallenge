@@ -3,71 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drum kit</title>
+    <title>30 days challenge</title>
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body>
-    <div class="keys">
-      <div data-key="65" class="key">
-        <kbd>A</kbd>
-        <span class="sound">clap</span>
-      </div>
-      <div data-key="83" class="key">
-        <kbd>S</kbd>
-        <span class="sound">hihat</span>
-      </div>
-      <div data-key="68" class="key">
-        <kbd>D</kbd>
-        <span class="sound">kick</span>
-      </div>
-      <div data-key="70" class="key">
-        <kbd>F</kbd>
-        <span class="sound">openhat</span>
-      </div>
-      <div data-key="76" class="key">
-        <kbd>L</kbd>
-        <span class="sound">tink</span>
-      </div>
-    </div>
-    <audio
-      data-key="65"
-      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
-    ></audio>
-    <audio
-      data-key="83"
-      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
-    ></audio>
-    <audio
-      data-key="68"
-      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
-    ></audio>
-    <audio
-      data-key="70"
-      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
-    ></audio>
-    <audio
-      data-key="76"
-      src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
-    ></audio>
-    <script>
-      function isPlayed(e) {
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-        if (!audio) return;
-        audio.currentTime = 0;
-        audio.play();
-        key.classList.add("playing");
-      }
+  <body class="mainbody">
+    <header>
+      <h1 class="header">#30DaysChallenge</h1>
+      <p class="parag">
+        This is a 30 Day Vanilla JS Coding Challenge. I will build 30 things in
+        30 days with Vanilla JS
+      </p>
 
-      function removeTransition(e) {
-        if (e.propertyName !== "transform") return;
-        this.classList.remove("playing");
-      }
-      const keys = document.querySelectorAll(".key");
-      keys.forEach((key) =>
-        key.addEventListener("transitionend", removeTransition)
-      );
-      window.addEventListener("keydown", isPlayed);
-    </script>
+      <p class="parag">
+        Join me using this <a href="https://javascript30.com/">link</a>
+      </p>
+    </header>
+    <main class="main">
+        <ul>
+            <li>1st day of 30: <br> <a href="drum.html">Drum Kit</a></li>
+        </ul>
+    </main>
   </body>
 </html>
