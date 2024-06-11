@@ -1,3 +1,8 @@
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 10px;
+}
 body {
   padding: 4rem;
 }
@@ -75,11 +80,11 @@ kbd {
 }
 
 /* css_js_clock */
-.clock_page{
-    background-color: #705050;
-    font-size: 2rem;
-    min-height: 100vh;
-    align-items: center;
+.clock_page {
+  background-color: #705050;
+  font-size: 2rem;
+  min-height: 100vh;
+  align-items: center;
 }
 .clock {
   width: 30rem;
@@ -108,4 +113,29 @@ kbd {
   transform: rotate(90deg);
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+/* CSS variables */
+.var-css {
+  background-color: #111111;
+  color: white;
+}
+.d-css {
+  font-size: 2.5rem;
+  text-align: center;
+}
+.controls {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.css-img{
+padding: var(--spacing);
+background: var(--base);
+filter: blur(var(--blur));
+width: 100%;
+margin-top: 4rem;
+}
+.h1{
+  color: var(--base);
 }
