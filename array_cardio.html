@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Cardio</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <script>
+      const inventors = [
+        { first: "John", last: "Defvoe", year: 1920, pass: 2020 },
+        { first: "Shohn", last: "Drtyoe", year: 1920, pass: 2021 },
+        { first: "GHohn", last: "Dasdoe", year: 1960, pass: 2015 },
+        { first: "RTohn", last: "Dopoe", year: 2020, pass: 2030 },
+        { first: "Joghjon", last: "Drtyoe", year: 2000, pass: 2010 },
+        { first: "Juohn", last: "Drtoe", year: 2012, pass: 2015 },
+      ];
+      const filter = inventors.filter(
+        (item) => item.year >= 1900 && item.year <= 2000
+      );
+      const map = inventors.map((item) => `${item.first} ${item.last}`);
+      const sort = inventors.sort((a, b) => (a.year > b.year ? 1 : -1));
+      const reduce = inventors.reduce((total, item) => {
+        return total + (item.pass - item.year);
+      }, 0);
+      const oldest = inventors.sort((a, b) => {
+        const lastGay = a.pass - a.year;
+        const nextGay = b.pass - b.year;
+
+        return lastGay > nextGay ? -1 : 1;
+      });
+
+      console.table(filter);
+      console.table(map);
+      console.table(sort);
+      console.table(reduce);
+      console.table(oldest);
+
+      const people = [
+        "Jon, Doe",
+        "Mick, Jacj",
+        "Jane, Smith",
+        "Alice, Johnson",
+        "Bob, Brown",
+        "Charlie, Davis",
+        "Emily, Garcia",
+        "Frank, Martinez",
+        "Grace, Wilson",
+        "Henry, Moore",
+      ];
+
+      const alpha = people.sort((last, next) => {
+        const [aName, aLastName] = last.split(", ");
+        const [bName, bLastName] = next.split(", ");
+
+        return aLastName > bLastName ? 1 : -1;
+      });
+      console.log(alpha);
+
+      const data = ["cat", "cat", "cat", "dog", "fish", "fish", "fish"];
+
+      const sumup = data.reduce((obj, item) => {
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+
+      console.log(sumup);
+    </script>
+  </body>
+</html>
