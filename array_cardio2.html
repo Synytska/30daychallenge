@@ -30,18 +30,15 @@
         (person) => new Date().getFullYear() - person.year >= 19
       );
 
-      const find = coments.find(coment => coment.id === 453278)
+      const find = coments.find((coment) => coment.id === 453278);
 
-      const findIndex = coments.findIndex(coment => coment.id === 473256)
-      coments.splice(findIndex, 1)
-
+      const findIndex = coments.findIndex((coment) => coment.id === 473256);
+      coments.splice(findIndex, 1);
 
       console.log(isAdult);
       console.log(isEvery);
       console.log(find);
       console.log(coments);
-
-
     </script>
   </body>
 </html>
