@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Cardio Day2</title>
+  </head>
+  <body>
+    <script>
+      const people = [
+        { name: "Wes", year: 1998 },
+        { name: "Joes", year: 1958 },
+        { name: "Wiklls", year: 1979 },
+        { name: "Western", year: 1945 },
+        { name: "Yuiok", year: 2022 },
+      ];
+      const coments = [
+        { text: "You are good", id: 453278 },
+        { text: "Sine fghj", id: 897278 },
+        { text: "Fine", id: 478308 },
+        { text: "You are styue cj", id: 129044 },
+        { text: "You sckfgkhl lnh good", id: 473256 },
+      ];
+
+      const isAdult = people.some(
+        (person) => new Date().getFullYear() - person.year >= 19
+      );
+
+      const isEvery = people.every(
+        (person) => new Date().getFullYear() - person.year >= 19
+      );
+
+      const find = coments.find(coment => coment.id === 453278)
+
+      const findIndex = coments.findIndex(coment => coment.id === 473256)
+      coments.splice(findIndex, 1)
+
+
+      console.log(isAdult);
+      console.log(isEvery);
+      console.log(find);
+      console.log(coments);
+
+
+    </script>
+  </body>
+</html>
