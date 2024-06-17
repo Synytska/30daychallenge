@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14 Dev Tools Tricks</title>
+  </head>
+  <body>
+    <p onclick="makeGreen()">Break</p>
+    <script>
+      const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "Hugo", age: 8 },
+      ];
+      const p = document.querySelector("p");
+
+      // Find where the code is: 1.right click on the inspected code. 2. Break on wherewere you need. 3. Click on the nedded code again.
+      function makeGreen() {
+        const p = document.querySelector("p");
+        p.style.color = "#BADA55";
+        p.style.fontSize = "50px";
+      }
+      //Some consol features
+      console.log("Hello %s", "Kris"); //Replace %s with second prop
+      console.log("%c Very big text", "font-size: 50px"); //Replace %c with some styling code
+      console.warn("OH NOO"); //Warning message
+      console.error("OH NOO"); //Error message
+      console.info("Crocodiles"); //Info message
+      console.assert(1 === 2, "that is wrong"); //Assertion message
+      console.clear(); //Clear message
+      console.dir(p); //See the direction
+
+      dogs.forEach((dog) => {
+        console.group(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} yo`);
+        console.groupEnd(`${dog.name}`);
+      }); //Grouping together
+
+      console.count("Wes");
+      console.count("Wes");
+      console.count("Wes");
+      console.count("Wes"); //counting
+
+      console.time("Fetching");
+      fetch("https://api.github.com/users/wesbos")
+        .then((data) => data.json())
+        .then((data) => {
+          console.timeEnd("Fetching");
+          console.log(data);
+        }); //How long does it takes
+
+      console.table(dogs); //console as table
+    </script>
+  </body>
+</html>
