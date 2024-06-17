@@ -290,3 +290,8 @@ span.population {
 .hl {
   background: #ffc600;
 }
+
+/* Fun with canvas */
+.canvas{
+  background-color: #111111;
+}
