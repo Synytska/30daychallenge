@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Multiple Checkboxes</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="multiple">
+    <main>
+        <div><a href="index.html" class="home">Home</a></div>
+    <div class="descript">
+      Try to check multiple with Shift!
+    </div>
+      <div class="inbox">
+        <div class="item">
+          <input type="checkbox" />
+          <p>This is an inbox layout</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" />
+          <p>Check one item</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" />
+          <p>Hold down your Shift key</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" />
+          <p>Hold down your Shift key</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" />
+          <p>Check a lower item</p>
+        </div>
+        <div class="item">
+          <input type="checkbox" />
+          <p>Everything in between should also be set to checked</p>
+        </div>
+      </div>
+    </main>
+    <script>
+      const checkboxes = document.querySelectorAll(
+        '.inbox input[type="checkbox"]'
+      );
+
+      checkboxes.forEach((checkbox) =>
+        checkbox.addEventListener("click", handleCheck)
+      );
+
+      let lastChecked;
+
+      function handleCheck(e) {
+        let inBetween = false;
+        if (e.shiftKey && this.checked) {
+          checkboxes.forEach((checkbox) => {
+            if (checkbox === this || checkbox === lastChecked) {
+              inBetween = !inBetween;
+            }
+            if (inBetween) {
+              console.log("here!");
+              checkbox.checked = true;
+            }
+          });
+        }
+        lastChecked = this;
+      }
+    </script>
+  </body>
+</html>
