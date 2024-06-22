@@ -9,7 +9,7 @@ body {
   box-sizing: inherit;
 }
 .drum {
-  background-image: url("test.jpg");
+  background-image: url("./media/test.jpg");
 }
 .mainbody {
   background-color: #111111;
@@ -38,7 +38,7 @@ a {
 }
 .list {
   display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
 }
 .home {
@@ -486,4 +486,11 @@ input[type=range]::-moz-range-thumb {
   border-radius: 50px;
   background: #ffc600;
   cursor: pointer;
+}
+/* konami */
+.konami{
+  background-color: #111111;
+}
+.pink{
+  color: pink;
 }
